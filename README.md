@@ -1,2 +1,2 @@
 # Scripts
-Contains snippet of codes
+Contain snippet of codes
