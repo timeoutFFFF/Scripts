@@ -1,6 +1,6 @@
 ### pymupdf tutorial
 
-###### iterate through each object
+###### iterate through  all objects of a pdf
 ```python
 #  doc = fitz.open(source_file)
 xreflen = doc.xref_length()
