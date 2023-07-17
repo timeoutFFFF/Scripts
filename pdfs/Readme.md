@@ -1,5 +1,32 @@
 ### pymupdf tutorial
 
+
+###### create a blank pdf
+
+```python
+def create_a_pdf():
+    doc = fitz.open()
+    # add a page to doc
+    page= doc.new_page()
+
+    output_file = "example.pdf"
+    doc.save(output_file)
+    doc.close()
+```
+
+###### add js object to pdf:
+```python
+# https://github.com/pymupdf/PyMuPDF/discussions/2157
+def add_js_object(doc, js="app.alert('hello')"):
+    xref = doc.get_new_xref()
+    objsource = f"<</Type/Action/S/JavaScript/JS({js})>>"
+    doc.update_object(xref, objsource)
+
+    #update cataloge
+    cat = doc.pdf_catalog()
+    doc.xref_set_key(cat, "OpenAction", f"{xref} 0 R")
+```
+
 ###### iterate through  all objects of a pdf
 ```python
 #  doc = fitz.open(source_file)
