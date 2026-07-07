@@ -7,3 +7,6 @@
 <div style="display: none;">
     This content is hidden and takes up no space.
 </div>
+
+
+[^hidden-context]: This is hidden text because this link reference is never actually called in the document body.
